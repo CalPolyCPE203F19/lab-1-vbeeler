@@ -6,6 +6,9 @@ class BetterLoop
          If not, return false.  Use a "foreach" loop.
       */
 
-      return true;  // A bit optimistic, but a real boolean value.
+      for (int val : values)
+         if (v == val)
+            return true;
+      return false;  // A bit optimistic, but a real boolean value.
    }
 }

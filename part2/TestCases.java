@@ -18,18 +18,62 @@ public class TestCases
    public static final double DELTA = 0.00001;
 
    /*
-    * This test is just to get you started.
-    */
+ *     * This test is just to get you started.
+ *         */
    @Test
    public void testGetX()
    {
       assertEquals(1.0, new Point(1.0, 2.0).getX(), DELTA);
    }
 
-   /*
-    * The tests below here are to verify the basic requirements regarding
-    * the "design" of your class.  These are to remain unchanged.
-    */
+   @Test
+   public void testGetY()
+   {
+      assertEquals(4.0, new Point(0.0, 4.0).getY(), DELTA);
+   }
+
+   @Test
+   public void testGetRadius()
+   {
+      assertEquals(5.0, new Point(3.0, 4.0).getRadius(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle1()
+   {
+      assertEquals(Math.PI/2, new Point(0.0, 1.0).getAngle(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle2()
+   {
+      assertEquals(Math.PI/4, new Point(1.0, 1.0).getAngle(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle3()
+   {
+      assertEquals(Math.PI*3/4, new Point(-1.0, 1.0).getAngle(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle4()
+   {
+      assertEquals(-Math.PI*3/4, new Point(-3.0, -3.0).getAngle(), DELTA);
+   }
+
+   @Test
+   public void testRotate90()
+   {
+      Point newPoint = new Point(3.0, 1.0).rotate90();
+      assertEquals(new Point(-1.0, 3.0).getX(), new Point(3.0, 1.0).rotate90().getX(), DELTA);     
+      assertEquals(new Point(-1.0, 3.0).getY(), new Point(3.0, 1.0).rotate90().getY(), DELTA); 
+   }
+
+/*
+ *     * The tests below here are to verify the basic requirements regarding
+ *         * the "design" of your class.  These are to remain unchanged.
+ *             */
 
    @Test
    public void testImplSpecifics()

@@ -8,6 +8,9 @@ class SimpleLoop
          practice the syntax for a loop.
       */
 
-      return 0;
+      int sum = 0;
+      for (int i = low; i <= high; i++)
+         sum += i;
+      return sum;
    }
 }
